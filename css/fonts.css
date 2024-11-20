@@ -1,0 +1,34 @@
+h1
+{
+    font-family: "Doto", sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+h2
+{
+    font-family: "Doto", sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+h3
+{
+    font-family: "Doto", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+h4,h5
+{
+    font-family: "Doto", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+p, li
+{
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+}

@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+:root
+{
+    --primaryColor:rgb(248, 249, 250) ;
+    --secondaryColor: #5A5353;
+    --extraColor: rgb(114, 174, 200);
+}
+
+.bgPrimary
+{
+    background-color: var(--primaryColor);
+}
+
+.sizeHeader
+{
+    height: 100vh;
+}
+
+.imgHeader
+{
+    scale: 0.5;
+}
