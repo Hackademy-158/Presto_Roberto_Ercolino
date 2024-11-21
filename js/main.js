@@ -1,4 +1,9 @@
 let navbar = document.querySelector('#containerNav');
+let numbers = document.querySelectorAll('#texts');
+
+let page = document.querySelector('#contentPage');
+
+let check = false;
 
 window.addEventListener('scroll', ()=>
     {
@@ -15,3 +20,41 @@ window.addEventListener('scroll', ()=>
                 navbar.classList.add('container-fluid', 'bgExtra' );
             }
     });
+
+function createInterval(element, finalNumber, time)
+{
+    counter = 0;
+
+    let interval = setInterval(()=> 
+        {
+            if(counter < finalNumber)
+                {
+                    counter++;
+                    element.innerHTML = counter;
+                }
+                else
+                {
+                    clearInterval(interval);
+                }
+        },time)
+}
+
+let observer = new IntersectionObserver((entries)=>
+    {
+        entries.forEach(entry=>
+            {
+                if(entry.isIntersecting && !check)
+                    {
+                        createInterval(numbers[0], 2000, 10);
+                        createInterval(numbers[1], 3000, 5);
+                        check = true;
+                    }
+            })
+    })
+
+observer.observe(numbers[0])
+
+setTimeout(()=>
+    {
+        page.classList.remove('d-none');
+    },10000)
