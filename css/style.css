@@ -35,7 +35,7 @@
 .sticky_position
 {
     position: sticky;
-    top: 30px;
+    top: 40px;
     z-index: 5;
 }
 
