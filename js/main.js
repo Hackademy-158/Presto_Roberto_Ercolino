@@ -2,6 +2,7 @@ let navbar = document.querySelector('#containerNav');
 let numbers = document.querySelectorAll('#texts');
 
 let page = document.querySelector('#contentPage');
+let loading = document.querySelector('#loading');
 
 let check = false;
 
@@ -54,7 +55,8 @@ let observer = new IntersectionObserver((entries)=>
 
 observer.observe(numbers[0])
 
-setTimeout(()=>
-    {
-        page.classList.remove('d-none');
-    },10000)
+// setTimeout(()=>
+//     {
+//         page.classList.remove('d-none');
+//         loading.classList.add('d-none');
+//     },1000)
