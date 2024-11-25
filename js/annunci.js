@@ -4,6 +4,8 @@ fetch('../AnnunciDATA.json').then(response => response.json()).then(data =>
     {
         let cardsContainer = document.querySelector('#cardsContainer');
         let radioContainer = document.querySelector('#radioWrapper');
+        let rangeInput = document.querySelector('#rangeInput');
+        let numberPrice = document.querySelector('#numberPrice');
 
         function setCategory()
         {
@@ -81,4 +83,30 @@ fetch('../AnnunciDATA.json').then(response => response.json()).then(data =>
                         filterByCategory(category);
                     })
             })
+
+        function setInputPrice()
+        {
+            let prices = data.map((annuncio) => Number(annuncio.price))
+            
+            prices.sort((a,b) => a-b)
+            let maxPrice = prices.pop();
+
+            rangeInput.max = maxPrice;
+            rangeInput.value = maxPrice;
+            numberPrice.innerHTML = `${maxPrice} €`;
+        }
+
+        setInputPrice();
+        
+        function filterByPrice(numero){
+            let filtered = data.filter(annuncio=> Number(annuncio.price) <= Number(numero))
+            
+            createCard(filtered);
+        }
+
+        rangeInput.addEventListener( 'input', ()=>{
+            filterByPrice(rangeInput.value)
+            numberPrice.innerHTML = `${rangeInput.value} €`;
+        } )
+
     })
